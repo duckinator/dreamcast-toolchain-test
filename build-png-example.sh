@@ -32,6 +32,7 @@ echo "== Generate CDIs"
 echo "$ mkdir isofs"
 mkdir isofs || exit 1
 
+run bash -c 'cp *.elf ./isofs'
 run bash -c 'cp /opt/toolchains/mksdiso/src/makeip/{ip.txt,IP.TMPL} .'
 run makeip ip.txt IP.BIN
 run /opt/toolchains/dc/kos/utils/scramble/scramble output.bin isofs/1ST_READ.BIN
