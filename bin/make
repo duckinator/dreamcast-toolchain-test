@@ -1,0 +1,4 @@
+#!/bin/bash
+
+# Use /tmp/cirrus-ci-build because that's what CI uses and I'm lazy.
+docker run --rm -it -v "$(pwd):/tmp/cirrus-ci-build" -w /tmp/cirrus-ci-build -u "$(id -u):$(id -g)" duckinator/dreamcast-toolchain make "$@"
