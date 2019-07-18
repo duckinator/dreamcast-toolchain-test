@@ -37,7 +37,7 @@ run bash -c 'cp /opt/toolchains/mksdiso/src/makeip/{ip.txt,IP.TMPL} .'
 run makeip ip.txt IP.BIN
 run /opt/toolchains/dc/kos/utils/scramble/scramble output.bin isofs/1ST_READ.BIN
 run genisoimage -G IP.BIN -joliet -rock -l -o output.iso isofs/
-run cdi4dc output.iso output.cdi
+run cdi4dc output.iso output.cdi -d
 
 #dd if=session1.iso bs=1024 count=36 > session2.iso
 #run cdrecord dev=1,0,0 speed=8 -multi -xa1 session1.iso
